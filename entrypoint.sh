@@ -27,7 +27,8 @@ then
     hexo generate --deploy
 else
     NODE_PATH=$NODE_PATH:$(pwd)/node_modules node /sync_deploy_history.js
-    hexo generate --deploy -m "$INPUT_COMMIT_MSG"
+    # hexo generate --deploy -m "$INPUT_COMMIT_MSG"
+    hexo generate --deploy -m
 fi
 
 echo ::set-output name=notify::"Deploy complate."
